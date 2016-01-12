@@ -1,0 +1,282 @@
+body {
+		background: url('../images/bg.png') #000 no-repeat center center fixed; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+}
+
+.btn-simtaru {
+    background-color: #3cd19c;
+    border-color: #3cd19c;
+    color: #fff;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+
+
+.col-fixed {
+    /* custom width */
+    width:320px;
+}
+.col-min {
+    /* custom min width */
+    min-width:320px;
+}
+.col-max {
+    /* custom max width */
+    max-width:320px;
+}
+
+
+.col-fixed {
+    /* custom width */
+    width:320px;
+}
+.col-min {
+    /* custom min width */
+    min-width:320px;
+}
+.col-max {
+    /* custom max width */
+    max-width:320px;
+}
+
+
+/*.account {
+  background: #1f3649;
+  background: -moz-radial-gradient(center, ellipse cover, #1f3649 0%, #17253d 44%, #040d11 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1f3649), color-stop(44%, #17253d), color-stop(100%, #040d11));
+  background: -webkit-radial-gradient(center, ellipse cover, #1f3649 0%, #17253d 44%, #040d11 100%);
+  background: -o-radial-gradient(center, ellipse cover, #1f3649 0%, #17253d 44%, #040d11 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #1f3649 0%, #17253d 44%, #040d11 100%);
+  background: radial-gradient(ellipse at center, #1f3649 0%, #17253d 44%, #040d11 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@account-color-dark', endColorstr='#040d11', GradientType=1);
+}*/
+.account a {
+  color: #D1D1D1;
+  font-size: 14px;
+}
+.account a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.account .backstretch:before {
+  background-color: rgba(15, 15, 15, 0.6);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.account .form-signin {
+  margin: 0 auto;
+  max-width: 330px;
+}
+.account .form-signin .form-control:focus {
+  z-index: 2;
+}
+.account .form-signin input[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+}
+.account .form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+}
+.account .account-wall {
+  margin-top: 10%;
+  padding: 20px 20px 10px;
+  position: relative;
+}
+.account .login-title {
+  color: #555555;
+  display: block;
+  font-size: 22px;
+  font-weight: 400;
+}
+.account .profile-img {
+  display: block;
+  height: 96px;
+  margin: 0 auto 10px;
+  width: 96px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.account .select-img {
+  display: block;
+  height: 75px;
+  margin: 0 30px 10px;
+  width: 75px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.account .select-name {
+  display: block;
+  margin: 30px 10px 10px;
+}
+.account .logo-img {
+  display: block;
+  height: 96px;
+  margin: 0 auto 10px;
+  width: 96px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.account .btn.btn-lg {
+  font-size: 15px;
+  padding: 8px 48px 6px;
+}
+.account .btn.btn-lg.btn-fb {
+  font-size: 15px;
+  padding: 8px 48px 0px;
+}
+.account .user-img {
+  color: #ffffff;
+  display: block;
+  font-size: 75px;
+  left: 0;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: -80px;
+}
+.account .social-btn {
+  padding-top: 50px;
+}
+.account .btn-block i {
+  margin-top: .1em;
+}
+.account .form-signup {
+  margin: 0 auto;
+  max-width: none;
+}
+.account .form-signup .form-control:focus {
+  z-index: 2;
+}
+.account .form-signup input[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+}
+.account .form-signup input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+}
+.account .form-signup #submit-form {
+  display: block;
+  margin: auto;
+}
+.account .form-signup .social-btn .btn {
+  font-size: 15px;
+  height: 35px;
+  padding: 8px 20px;
+}
+.account .form-signup .terms {
+  color: #ffffff;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding-top: 5px;
+}
+.account .form-password {
+  display: none;
+}
+.account #lockscreen-block .account-wall {
+  margin-top: 240px;
+  width: 1100px;
+}
+.account #lockscreen-block .user-image {
+  float: left;
+  position: relative;
+  width: 25%;
+}
+.account #lockscreen-block .user-image img {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  display: block;
+  float: right;
+  margin-top: -10px;
+  max-width: 132px;
+}
+.account #lockscreen-block .form-signin {
+  float: left;
+  padding-left: 30px;
+  position: relative;
+  width: 75%;
+}
+.account #lockscreen-block h2 {
+  color: #ffffff;
+  font-family: 'Lato', arial;
+  font-weight: 100;
+  margin-top: 0;
+}
+.account #lockscreen-block p {
+  color: #CFCFCF;
+  color: #ffffff;
+}
+.account #lockscreen-block .input-group .form-control {
+  -webkit-border-radius: 17px 0 0 17px;
+  -moz-border-radius: 17px 0 0 17px;
+  border-radius: 17px 0 0 17px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.account #lockscreen-block .input-group .btn {
+  -webkit-border-radius: 0 17px 17px 0;
+  -moz-border-radius: 0 17px 17px 0;
+  border-radius: 0 17px 17px 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.account #lockscreen-block #loader {
+  left: auto;
+  margin: auto;
+  position: absolute;
+  right: -1px;
+  top: -11px;
+  width: 133px;
+}
+
+
+
+ /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+@media only screen and (max-width: 992px) {
+    /* adjust the l/r sidebars on small and extra-small devices. */
+
+}
+@media only screen and (max-width: 768px) {
+    /* hide the sidebars by default on extra-small devices (phones) */
+
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+        
+}

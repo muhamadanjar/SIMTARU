@@ -1,0 +1,21 @@
+.loginDijit .listdbootstrapFix{
+    padding: 0 25px 0 25px;
+}
+
+.loginDijit .loginContainer {
+	padding: 0px;
+}
+.floatingWidget .loginDijit .loginContainer {
+	padding: 5px;
+}
+.loginDijit .loginNode {
+    width: 98%;
+    height: 325px;
+}
+.floatingWidget .loginDijit .loginNode {
+    width: 450px;
+}
+.loginDijit .loginTabContainer {
+	width: 100%;
+	height: 100%;
+}

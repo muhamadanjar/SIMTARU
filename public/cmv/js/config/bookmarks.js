@@ -1,0 +1,1 @@
+define({map:!0,editable:!0,bookmarks:bm});

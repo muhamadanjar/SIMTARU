@@ -1,0 +1,1 @@
+define({map:!0,mapClickMode:!0,mapRightClickMenu:!0,identifyLayerInfos:!0,identifyTolerance:5,identifies:idn});
