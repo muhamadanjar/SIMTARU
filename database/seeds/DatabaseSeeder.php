@@ -3,6 +3,7 @@ use App\User;
 use App\RoleUser;
 use App\Layer;
 use App\Role;
+use App\Bookmark;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 

@@ -72,7 +72,7 @@ class LayerController extends Controller {
 
 		//$request->file('image')->move($destinationPath, $fileName);
 
-		return redirect('layer/create-new-post/success');
+		return Redirect::to('layer');
 	}
 
 	public function createSuccess() {
