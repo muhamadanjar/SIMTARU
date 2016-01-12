@@ -22,26 +22,26 @@
                     
                     {!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nama Lengkap', ['class' => 'col-md-1 control-label']) !!}
-                            <div class="col-md-11">
+                            {!! Form::label('name', 'Nama Lengkap', ['class' => 'col-md-2 control-label-kiri']) !!}
+                            <div class="col-md-8">
                                 {!! Form::text('name', $users->name, ['class' => 'form-control', 'placeholder' => "Nama Lengkap"]) !!}
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-1 control-label">Email</label>
-                            <div class="col-md-11">
+                            <label for="email" class="col-md-2 control-label-kiri">Email</label>
+                            <div class="col-md-8">
                                  {!! Form::text('email', $users->email, ['class' => 'form-control', 'placeholder' => "Email"]) !!}
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="username" class="col-md-1 control-label">Username</label>
-                            <div class="col-md-11">
+                            <label for="username" class="col-md-2 control-label-kiri">Username</label>
+                            <div class="col-md-8">
                                  {!! Form::text('username', $users->username, ['class' => 'form-control', 'placeholder' => "Username"]) !!}
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="leveluser" class="col-md-1 control-label">Level User</label>
-                            <div class="col-md-11">
+                            <label for="leveluser" class="col-md-2 control-label-kiri">Level User</label>
+                            <div class="col-md-8">
                                 @foreach($leveluser as $key => $level)
                                     
                                     {!! Form::checkbox('leveluser[]', $level->iduserlevel,true, ['class' => '']) !!} {{ $level->user_level }}
@@ -51,8 +51,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-md-1 control-label">Password</label>
-                            <div class="col-md-11">
+                            <label for="password" class="col-md-2 control-label-kiri">Password</label>
+                            <div class="col-md-8">
                                 <input type="hidden" name="oldpassword" value="{{ $users->password }}" />
                                 <input type="password" name="password" value="{{ $users->password }}" class="form-control" placeholder="Please Input Password" />
                             </div>

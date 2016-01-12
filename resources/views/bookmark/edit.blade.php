@@ -60,7 +60,7 @@
                         
                         <div class="form-group">
                             <div class="col-md-11 col-md-offset-1">
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <a href="{{ action('BookmarkController@viewAllBookmark') }}" class="btn btn-default">Reset</a>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
