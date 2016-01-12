@@ -89,7 +89,11 @@ class UserController extends Controller {
 	public function manageExisting() {
 
 		$admin = \Auth::user();
-		$user = User::all();
+		$user = User::join('role_user',function($join){
+			$join->on('Users.id', '=', 'role_user.user_id');
+		})
+		->join('roles','roles.id','=','role_user.role_id')
+		->get(['Users.id','Users.name','Users.name','Users.email','Users.username','Users.na','roles.name as rolename']);
 		$title = 'Manage Existing User';
 
 		return view('page.useradmin')->with('title', $title)->with('users', $user)->with('admin', $admin);
@@ -117,6 +121,7 @@ class UserController extends Controller {
 
 	public function NAUser($id){
 		$user = User::find($id);
+
 		$status = ($user->na == 'N') ? 'Y' : 'N' ;
 		$user->na = $status;
 		$user->save();
