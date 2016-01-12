@@ -72,7 +72,7 @@ class LayerController extends Controller {
 
 		//$request->file('image')->move($destinationPath, $fileName);
 
-		return Redirect::to('layer');
+		return Redirect::to('layer')->with('message',\AHelper::format_message('Data Berhasil diubah','success'));
 	}
 
 	public function createSuccess() {
@@ -363,7 +363,7 @@ class LayerController extends Controller {
 		    throw $e;
 		}
 
-		return redirect('layer/manage-existing-layer/edit/' . $request->id . '/success');
+		return Redirect::to('layer')->with('message',\AHelper::format_message('Data Berhasil diubah','info'));
 	}
 
 	public function editSuccess() {

@@ -27,6 +27,16 @@ class UserController extends Controller {
 		$user->leveluser = implode(",", (array)$request->leveluser);
 		$user->save();
 
+		try {
+			$detil = new RoleLayer();
+			$detil->role_id = $value['role_id'];
+			$detil->layer_id = $value['layer_id'];
+			$detil->save();
+		} catch (Exception $e) {
+			DB::rollback();
+		    throw $e;
+		}
+
 		return redirect('user/create-new-user/success');
 	}
 

@@ -92,6 +92,9 @@ date_default_timezone_set('Asia/Jakarta');
                <small>Administrator</small>
             </h3>
             @endif
+            @if(Session::has('message'))
+                  {!! Session::get('message') !!}
+            @endif
             <div class="row">
             <div class="col-lg-12">
 

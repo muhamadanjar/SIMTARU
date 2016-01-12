@@ -38,8 +38,7 @@
                         <div class="form-group">
                             <label for="leveluser" class="col-md-1 control-label">Level User</label>
                             <div class="col-md-11">
-                                 {!! Form::checkbox('leveluser[]', '1', ['class' => 'form-control', 'placeholder' => "Your post's title here"]) !!} Admin
-                                 {!! Form::checkbox('leveluser[]', '2', ['class' => 'form-control', 'placeholder' => "Your post's title here"]) !!} User
+                                 {!! \AHelper::RoleSelect() !!}
                             </div>
                         </div>
                         <div class="form-group">
