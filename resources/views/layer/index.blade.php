@@ -52,7 +52,17 @@
                                 </button>
                                 <ul role="menu" class="dropdown-menu">
                                     <li><a href="layer/edit/{!! $value->id_layer !!}"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
-                                    <li><a href="layer/delete/{!! $value->id_layer !!}"><i class="fa fa-trash-o"></i> Hapus</a></li>
+                                    <li data-form="#frmDelete-{{ $value->id_layer }}" 
+                                        data-title="Hapus data layer {{ $value->layername }}" 
+                                        data-message="apa anda yakin menghapus data layer {{ $value->layername }} ?">
+                                        <a class= "formConfirm" href="#"><i class="fa fa-trash-o"></i> Hapus</a></li>
+                                    {!! Form::open(array(
+                                        'url' => route('layerdelete', array($value->id_layer)),
+                                        'method' => 'get',
+                                        'style' => 'display:none',
+                                        'id' => 'frmDelete-'.$value->id_layer
+                                    )) !!}
+                                    {!! Form::close() !!}
                                     <li class="divider"></li>
                                     <li><a href="layerinfo/{!! $value->id_layer !!}"><i class="fa fa-bars"></i> Setting PopUp</a></li>
                                     

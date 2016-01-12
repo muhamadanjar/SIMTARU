@@ -45,7 +45,7 @@ Route::post('layer-new-layer', 'LayerController@create');
 Route::get('layer/edit/{id}', 'LayerController@editExistingLayer');
 Route::post('layer/edit/{id}', 'LayerController@edit');
 
-Route::get('layer/delete/{id}', 'LayerController@delete');
+Route::get('layer/delete/{id}', ['as' => 'layerdelete' ,'uses'=>'LayerController@delete']);
 
 Route::get('layer/create-new-post/success','LayerController@createSuccess');
 Route::get('layer/manage-existing-layer/delete/{id}/success','LayerController@deleteSuccess');
