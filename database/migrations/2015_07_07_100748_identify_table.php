@@ -17,7 +17,7 @@ class IdentifyTable extends Migration {
 			$table->increments('id_identify_table');
 			$table->integer('id_identify');
 			$table->string('tablename',60)->nullable();
-			$table->timestamps();
+			
 		});
 	}
 
