@@ -90,6 +90,7 @@ Route::post('user/edit/{id}', 'UserController@edit');
 Route::get('user/delete/{id}', 'UserController@delete');
 Route::get('user-new-user', 'UserController@createNew');
 Route::post('user-new-user', 'UserController@create');
+Route::get('user-nonaktif-{id}', ['as' => 'usernonaktif','uses'=>'UserController@NAUser']);
 
 Route::get('user/create-new-user/success','UserController@createSuccess');
 Route::get('user/manage-existing-user/edit/{id}/success','UserController@editSuccess');

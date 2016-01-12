@@ -25,7 +25,8 @@
                     <tbody>
                    
                         @foreach ($users as $key => $value)
-                        <tr>
+                        <?php $aktif = ($value->na != 'N') ? 'alert alert-danger' : '' ;  ?>
+                        <tr class="{{$aktif}}">
                             <td>
 
                                 <div style="margin-bottom: 5px;" class="btn-group">
@@ -35,8 +36,20 @@
                                     </button>
                                     <ul role="menu" class="dropdown-menu">
                                         <li><a href="user/edit/{!! $value->id !!}"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
-                                        <li><a href="user/delete/{!! $value->id !!}"><i class="fa fa-trash-o"></i> Hapus</a></li>
+                                       
                                         <li class="divider"></li>
+                                        <li data-form="#frmNA-{{ $value->id }}" 
+                                            data-title="Ganti Status {{ $value->username }}" 
+                                            data-message="apa anda yakin mengganti status {{ $value->username }} ?">
+                                            <a class= "formConfirm" href="#"><i class="fa fa-bell"></i> Non aktif User</a>
+                                        </li>
+                                        {!! Form::open(array(
+                                            'url' => route('usernonaktif', array($value->id)),
+                                            'method' => 'get',
+                                            'style' => 'display:none',
+                                            'id' => 'frmNA-'.$value->id
+                                        )) !!}
+                                        {!! Form::close() !!}
                                       
                                     </ul>
                                 </div>

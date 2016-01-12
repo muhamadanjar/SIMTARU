@@ -20,7 +20,7 @@ class AHelper {
     	$a .= '<select name="role" class="form-control m-b">';
     	$a .= '<option value="0">----</option>';
     	foreach ($role as $key => $value) {
-	  		$sl = (strpos($lvl,$value->id) === false)? '' : 'selected';
+	  		$sl = ($lvl != $value->id) ? '' : 'selected';
 	  		
             $a .= '<option value="'.$value->id.'" '.$sl.'>'.$value->name.'</option>';
 	  	}

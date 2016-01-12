@@ -17,7 +17,7 @@
                         </div>
                     @endif
 
-                  
+                    
 
                     
                     {!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data']) !!}
@@ -42,10 +42,7 @@
                         <div class="form-group">
                             <label for="leveluser" class="col-md-2 control-label-kiri">Level User</label>
                             <div class="col-md-8">
-                                @foreach($leveluser as $key => $level)
-                                    
-                                    {!! Form::checkbox('leveluser[]', $level->iduserlevel,true, ['class' => '']) !!} {{ $level->user_level }}
-                                @endforeach
+                                {!! \AHelper::RoleSelect($users->role_id) !!}
                             
                                 
                             </div>

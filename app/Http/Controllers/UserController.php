@@ -6,6 +6,7 @@ use App\User;
 use App\LevelUser;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\EditUserRequest;
+use DB;
 //use Illuminate\Http\Request;
 
 class UserController extends Controller {
@@ -28,10 +29,9 @@ class UserController extends Controller {
 		$user->save();
 
 		try {
-			$detil = new RoleLayer();
-			$detil->role_id = $value['role_id'];
-			$detil->layer_id = $value['layer_id'];
-			$detil->save();
+			DB::table('role_user')->insert(
+				['role_id' => $request->role, 'user_id' => $user->id]
+			);
 		} catch (Exception $e) {
 			DB::rollback();
 		    throw $e;
@@ -66,7 +66,24 @@ class UserController extends Controller {
 		$user->save();
 		$user->touch();
 
-		return redirect('user/manage-existing-user/edit/' . $request->id . '/success');
+		try {
+			$roleuser= DB::table('role_user')->where('user_id', $user->id);
+			if ($roleuser->count() > 0) {
+				$roleuser->update(
+					['role_id' => $request->role, 'user_id' => $user->id]
+				);
+			}else{
+				DB::table('role_user')->insert(
+					['role_id' => $request->role, 'user_id' => $user->id]
+				);
+			}
+			
+		} catch (Exception $e) {
+			DB::rollback();
+		    throw $e;
+		}
+
+		return redirect('user')->with('message',\AHelper::format_message('Data Berhasil diubah','success'));
 	}
 
 	public function manageExisting() {
@@ -81,8 +98,10 @@ class UserController extends Controller {
 	public function editExisting($id) {
 
 		$admin = \Auth::user();
-		$users = User::find($id);
-		$leveluser = LevelUser::all();
+		//$users = User::find($id);
+		$users = DB::table('Users')->join('role_user',function($join){
+			$join->on('Users.id', '=', 'role_user.user_id');
+		})->where('Users.id','=',$id)->first();
 		$title = 'Edit Existing User';
 
 		return view('page.useradminedit',compact('title','users','admin','leveluser'));
@@ -95,5 +114,15 @@ class UserController extends Controller {
 
 		return view('page.useradminadd')->with('title', $title)->with('admin', $admin);
 	}
+
+	public function NAUser($id){
+		$user = User::find($id);
+		$status = ($user->na == 'N') ? 'Y' : 'N' ;
+		$user->na = $status;
+		$user->save();
+		return redirect('user')->with('message',\AHelper::format_message('User Berhasil diubah','success'));
+	}
+
+
 
 }

@@ -26,7 +26,7 @@ class EditUserRequest extends Request {
 			'email' => 'required',
 			'username' => 'required',
 			'password' => 'required',
-			'leveluser' => 'required',
+			
 		];
 	}
 
