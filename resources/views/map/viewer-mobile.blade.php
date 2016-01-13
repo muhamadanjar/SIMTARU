@@ -10,7 +10,7 @@
         <meta name="_token" content="{!! csrf_token() !!}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>Sistem Pemantauan Tata Ruang Kabupaten Bogor</title>
-        <link rel="icon" href="img/kabbogor.png" />
+        <link rel="icon" href="{{asset('images/kabbogor.png')}}" />
         <script src="vendor/jquery/jquery.min.js"></script>
         <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
         {!! Html::style('3.12compact/esri/css/esri.css') !!}
