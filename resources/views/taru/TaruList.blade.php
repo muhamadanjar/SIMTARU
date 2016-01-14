@@ -45,7 +45,19 @@
                                     </button>
                                     <ul role="menu" class="dropdown-menu">
                                         <li><a href="geotag-edit-{!! $value->objectid !!}"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
-                                        <li><a href="geotag-delete-{!! $value->objectid !!}"><i class="fa fa-trash-o"> Hapus</i></li>
+                                        
+                                        
+                                        <li data-form="#frmDelete-{{ $value->objectid }}" 
+                                            data-title="Hapus data" 
+                                            data-message="apa anda yakin menghapus data ?">
+                                            <a class= "formConfirm" href="#"><i class="fa fa-trash-o"></i> Hapus</a></li>
+                                        {!! Form::open(array(
+                                            'url' => route('geotagdelete', array($value->objectid)),
+                                            'method' => 'get',
+                                            'style' => 'display:none',
+                                            'id' => 'frmDelete-'.$value->objectid
+                                        )) !!}
+                                        {!! Form::close() !!}
                                         <li class="divider"></li>
                                       
                                     </ul>

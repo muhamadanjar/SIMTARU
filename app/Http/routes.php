@@ -77,7 +77,7 @@ Route::get('geotag-list','GeoTagCtrl@index');
 Route::get('geotag-edit-{id}','GeoTagCtrl@edit');
 Route::post('geotag-edit-{id}','GeoTagCtrl@update');
 
-Route::get('geotag-delete-{id}','GeoTagCtrl@destroy');
+Route::get('geotag-delete-{id}',['as'=>'geotagdelete','uses'=>'GeoTagCtrl@destroy']);
 
 Route::get('settingurl','SettingWeb@SettingWebURLForm');
 Route::post('settingurl','SettingWeb@SettingWebURLPost');
