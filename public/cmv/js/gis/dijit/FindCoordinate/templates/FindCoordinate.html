@@ -1,10 +1,10 @@
 <div class="gis_FindCoordinateDijit" >
     <div class="formContainer">
         <div data-dojo-type="dijit/form/Form" data-dojo-attach-point="searchFormDijit">
-            <!--<div data-dojo-attach-point="querySelectDom">
+            <div data-dojo-attach-point="querySelectDom">
                 <label>${i18n.selectQuery}:</label><br/>
     			<input type="select" data-dojo-type="dijit/form/FilteringSelect" data-dojo-props="name:'query',autoComplete:true,required:true,searchAttr:'description','class':'querySelect'" data-dojo-attach-point="querySelectDijit" data-dojo-attach-event="onChange:_onQueryChange"/>
-            </div>-->
+            </div>
             <div data-dojo-attach-point="queryTextDom">
                 <label>${i18n.kordinatx.label}:</label><br/>
     			<input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="searchTextDijit" data-dojo-props="name:'searchText',trim:true,required:true,value:'',placeholder:'${i18n.kordinatx.placeholder}','class':'searchText'" /><br/>
