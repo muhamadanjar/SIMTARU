@@ -394,6 +394,17 @@ define([
                 path: 'gis/dijit/Help',
                 title: 'Bantuan',
                 options: {}
+            },
+            findcoordinate: {
+                include: true,
+                id: 'coordinate',
+                type: 'titlePane',
+                canFloat: false,
+                path: 'gis/dijit/FindCoordinate',
+                title: 'Cari Kordinat',
+                open: false,
+                position: 0,
+                options: 'config/findcoordinate'
             }
 
         }
