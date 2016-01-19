@@ -1,0 +1,26 @@
+<div class="gis_CoordinateXYDijit" >
+    <div class="formContainer">
+        <div data-dojo-type="dijit/form/Form" data-dojo-attach-point="coordinateXYFormDijit">
+           	
+            <div data-dojo-attach-point="queryTextDom">
+                <label>${i18n.kordinatx}:</label><br/>
+    			<input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="XTextDijit" data-dojo-props="name:'XText',trim:true,required:true,value:'','id':'XText','class':'XText'" /><br/>
+            </div>
+
+            <div data-dojo-attach-point="queryTextDom">
+                <label>${i18n.kordinaty}:</label><br/>
+    			<input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="YTextDijit" data-dojo-props="name:'YText',trim:true,required:true,value:'','id':'YText','class':'YText'" /><br/>
+            </div>
+            
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'fa fa-search fa-fw','class':'searchButton'" data-dojo-attach-event="onClick:coordinate" data-dojo-attach-point="searchButtonDijit">
+                ${i18n.searchButton.label}
+			</div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'fa fa-history fa-fw','class':'clearButton'" data-dojo-attach-event="onClick:clearResults" data-dojo-attach-point="clearButtonDijit">
+                ${i18n.clearButton.label}
+			</div>
+			
+    	</div>
+	</div>
+    <div data-dojo-attach-point="findResultsNode" class="resultsContainer"></div>
+    <div data-dojo-attach-point="findResultsGrid" class="resultsGrid"></div>
+</div>

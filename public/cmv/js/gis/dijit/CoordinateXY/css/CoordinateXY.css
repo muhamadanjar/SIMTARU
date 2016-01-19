@@ -1,0 +1,55 @@
+.gis_CoordinateXYDijit {
+    width: 100%;
+}
+.gis_CoordinateXYDijit .querySelect, .gis_CoordinateXYDijit .XText, .YText {
+	width:100%;
+	margin-bottom: 10px;
+}
+
+.gis_CoordinateXYDijit .containsCheck {
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.gis_CoordinateXYDijit .clearButton {
+	float: right;
+}
+
+.gis_CoordinateXYDijit label {
+	font-weight:bold;
+	margin-left: 5px;
+}
+
+.gis_CoordinateXYDijit .resultsContainer {
+	font-weight: bold;
+	margin: 10px;
+	display: none;
+}
+
+.gis_CoordinateXYDijit .dgrid {
+	height: 240px !important;
+	width:100%;
+	display: none;
+}
+
+.gis_CoordinateXYDijit .dgrid .dgrid-scroller {
+	margin-top: 35px !important;
+}
+
+.gis_CoordinateXYDijit .dgrid .dgrid-header th {
+	font-weight: bold;
+}
+
+.gis_CoordinateXYDijit .dgrid .dgrid-cell {
+	font-size: 11px;
+	padding: 8px !important;
+	cursor: pointer;
+}
+
+.gis_CoordinateXYDijit .dgrid .field-value {
+	width: 70%;
+}
+
+.gis_CoordinateXYDijit .dgrid .field-foundFieldName {
+	display: none;
+}
