@@ -22,6 +22,8 @@ define([
 	'esri/tasks/FindTask',
 	'esri/tasks/FindParameters',
 	'esri/geometry/Extent',
+	"esri/geometry/Point", 
+	"esri/SpatialReference",
 	'dojo/text!./FindCoordinate/templates/FindCoordinate.html',
 	'dojo/i18n!./FindCoordinate/nls/resource',
 
@@ -30,7 +32,7 @@ define([
 	'dijit/form/ValidationTextBox',
 	'dijit/form/CheckBox',
 	'xstyle/css!./FindCoordinate/css/FindCoordinate.css'
-], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, domConstruct, lang, array, on, keys, Memory, OnDemandGrid, Selection, Keyboard, GraphicsLayer, Graphic, SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, graphicsUtils, FindTask, FindParameters, Extent, FindTemplate, i18n) {
+], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, domConstruct, lang, array, on, keys, Memory, OnDemandGrid, Selection, Keyboard, GraphicsLayer, Graphic, SimpleRenderer, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, graphicsUtils, FindTask, FindParameters, Extent,Point,SpatialReference, FindTemplate, i18n) {
 	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
 		widgetsInTemplate: true,
 		templateString: FindTemplate,
