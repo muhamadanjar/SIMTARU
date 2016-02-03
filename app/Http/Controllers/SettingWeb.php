@@ -38,7 +38,7 @@ class SettingWeb extends Controller{
 			$array[$key] = str_replace($search, $replace, $l->layerurl);
 			DB::table('Layers')->where('id_layer', $l->id_layer)->update(['layerurl' => $array[$key]]);
 		}
-		return Redirect::to('layer');
+		return Redirect::to('settingurl');
 		
 	}
 }
