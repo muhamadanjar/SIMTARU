@@ -99,11 +99,11 @@ define([
 			this.createGraphicLayers();
 
 			// allow pressing enter key to initiate the search
-			this.own(on(this.searchTextDijit, 'keyup', lang.hitch(this, function (evt) {
+			/*this.own(on(this.searchTextDijit, 'keyup', lang.hitch(this, function (evt) {
 				if (evt.keyCode === keys.ENTER) {
 					this.search();
 				}
-			})));
+			})));*/
 
 			this.queryIdx = 0;
 
@@ -190,7 +190,7 @@ define([
 		},
 		search: function () {
 			var query = this.queries[this.queryIdx];
-			var searchText = this.searchTextDijit.get('value');
+			//var searchText = this.searchTextDijit.get('value');
 			if (!query || !searchText || searchText.length === 0) {
 				return;
 			}
@@ -231,13 +231,39 @@ define([
 		},
 		coordinate: function () {
         	console.log('coordinate');
-        	XText = this.kordinatxTextDijit.value;
-        	YText = this.kordinatyTextDijit.value;
+        	//XText = this.kordinatxTextDijit.value;
+        	//YText = this.kordinatyTextDijit.value;
+        	var XText = this.kordinatxTextDijit.get('value');
+        	var YText = this.kordinatyTextDijit.get('value');
         	console.log('X'+XText+' Y'+YText);
         	maxZoom = this.map.getMaxZoom();
-        	console.log(this.spatialReference)  
+        	  
         	var point = new Point([XText,YText],new SpatialReference({ wkid:4326 }));
-    		this.map.centerAndZoom(point,this.map.getZoom()+3); 
+        	var sms = new SimpleMarkerSymbol().setStyle(
+			    SimpleMarkerSymbol.STYLE_CIRCLE).setColor(new esri.Color([130,159,83,0.40]));
+			var attr = {"Plant":"Mesa Mint"};
+  			var infoTemplate = new esri.InfoTemplate("Vernal Pool Locations","");
+  			var graphic = new Graphic(point,sms,attr,infoTemplate);
+  			this.pointGraphics.add(graphic);
+
+  			//console.log(this.spatialReference);
+
+  			// zoom to layer extent
+			var zoomExtent = null;
+			//If the layer is a single point then extents are null
+			// if there are no features in the layer then extents are null
+			// the result of union() to null extents is null
+
+			if (this.pointGraphics.graphics.length > 0) {
+				zoomExtent = this.getPointFeaturesExtent(this.pointGraphics.graphics);
+			}
+
+			if (zoomExtent) {
+				this.zoomToExtent(zoomExtent);
+				this.map.setZoom(maxZoom - 8);
+			}
+
+    		//this.map.centerAndZoom(point,this.map.getZoom()+3); 
     		//centerAndZoom 
         },
 		createResultsGrid: function () {

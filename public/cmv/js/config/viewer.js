@@ -326,7 +326,7 @@ define([
                     map: true,
                     //printTaskURL: 'https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task',
                     //printTaskURL: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task',
-                    printTaskURL: 'http://rsmm2014.com:6080/arcgis/rest/services/SIMTARU/ExportWebMap/GPServer/Export%20Web%20Map',
+                    printTaskURL: 'http://silver-pc:6080/arcgis/rest/services/SIMTARU/ExportWebMap/GPServer/Export%20Web%20Map',
                     
                     copyrightText: 'Copyright 2015',
                     authorText: 'Simtaru',

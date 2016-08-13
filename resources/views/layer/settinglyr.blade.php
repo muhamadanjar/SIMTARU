@@ -46,8 +46,8 @@
       <form>
         <div class="form-group">
           <label for="layerurl">URL</label>
-          <input type="text" class="form-control" id="layerurl" value="{{ $layers->layerurl }}" placeholder="Layer URL">
-          <input type="text" class="form-control" id="layer" value="{{ $layers->layer }}" placeholder="Layer">
+          <input type="text" class="form-control" id="layerurl" value="{{ $layers->layerurl }}" placeholder="Layer URL" disabled="disabled">
+          <input type="text" class="form-control" id="layer" value="{{ $layers->layer }}" placeholder="Layer" disabled="disabled">
         </div>
         <div id="content"></div>
         <div class="form-group">
@@ -57,9 +57,16 @@
             <ul class="list-group">
              
               @if(count($field) > 0)
-             
+              
               @foreach($field as $key => $d)
-                <li class="list-group-item">{{ $d->name }} <a class="btn btn-primary btn-xs" href="{{ URL::to('layerinfoftr') }}/{{ $layers->id_layer }}-{{ $d->id }}-{{ $layers->layer }}"><i class="fa fa-pencil-square-o"></i></a></li>
+                {{--*/ $fields = $d->fields /*--}}
+                <li class="list-group-item">{{ $d->name }} 
+                  @if(count($fields) > 0)
+                  <a class="btn btn-primary btn-xs" href="{{ URL::to('layerinfoftr') }}/{{ $layers->id_layer }}-{{ $d->id }}-{{ $layers->layer }}">
+                    <i class="fa fa-pencil-square-o"></i>
+                  </a>
+                  @endif
+                </li>
               @endforeach
               @else
                 <div class="row">

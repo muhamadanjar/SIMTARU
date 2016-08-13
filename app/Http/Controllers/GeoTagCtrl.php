@@ -93,7 +93,7 @@ class GeoTagCtrl extends Controller {
 		$GeoTag->penataan_sistem_drainase= $request->penataan_sistem_drainase;
 		$GeoTag->kemiringan_lahan= $request->kemiringan_lahan;
 		$GeoTag->sketsa= $request->sketsa;
-		$GeoTag->foto= $request->foto;
+		//$GeoTag->foto= $request->foto;
 		$file = $request->file('foto');
 		if(!empty($file)){
 			\File::delete(public_path('images/' . $GeoTag->foto));

@@ -115,9 +115,7 @@ require(["jquery", "dojo/query","dojo/dom","esri/request","dojo/_base/json","doj
     		        
     		       	
                	}
-            }
-     
-           	
+            }  	
         }
 	    function error_layersRequest(error){
 	    	console.log("Error: ", error.message);

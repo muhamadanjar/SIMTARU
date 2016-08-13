@@ -3,7 +3,7 @@ define({
     mapRightClickMenu: true,
     options: {
         //routeTaskUrl: 'http://partmapservices.ina-sdi.or.id:6080/arcgis/rest/services/KOTABOGOR/NetworkAnalystRute/NAServer/Route',
-        routeTaskUrl: 'http://rsmm2014.com:6080/arcgis/rest/services/SIMTARU/ROUTE/NAServer/Route',
+        routeTaskUrl: 'http://192.168.0.31:6080/arcgis/rest/services/SIMTARU/ROUTE/NAServer/Route',
         routeParams: {
             directionsLanguage: 'en-US',
             //directionsLengthUnits: units.KILOMETERS

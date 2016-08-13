@@ -221,9 +221,6 @@ class LayerController extends Controller {
 		}
 		
 		$html .= '</table>';
-		
-			
-		
 
 		return $html;
 	}
