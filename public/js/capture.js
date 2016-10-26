@@ -141,12 +141,12 @@
       var tablename = $('input[name=tablename]').val();
       var ts =tablename.split('|');
 
-        $.ajax({
+        /*$.ajax({
             url: 'imagestring',
             type: "post",
             data: {'data':data, '_token': $('input[name=_token]').val()},
             success: function(data){
-              console.log(data);
+              
               $.ajax({
                   url: 'editGeotagFoto',
                   type: "post",
@@ -169,6 +169,34 @@
                   }
               });
             }
+        });*/
+
+        $.ajax({
+            url: 'imagestring',
+            type: "post",
+            data: {'data':data, '_token': $('input[name=_token]').val()},
+        }).done(function(data){
+            $.ajax({
+                  url: 'editGeotagFoto',
+                  type: "post",
+                  data: {
+                    'objectid': $('input[name=objectid]').val(),
+                    'foto': data,
+                    '_token': $('input[name=_token]').val()
+                  },
+                  beforeSend: function (xhr) {
+                      var token = $('meta[name="csrf_token"]').attr('content');
+
+                      if (token) {
+                            return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                      }
+                  },
+                  success: function (argument) {
+                      console.log(argument);
+                      window.close();
+                      
+                  }
+              });
         });
       
     } else {

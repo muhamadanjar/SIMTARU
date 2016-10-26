@@ -161,7 +161,6 @@ class LayerController extends Controller {
 		->with('url',$url)
 		->with('field',$field);
 		
-		
 	}
 
 	public function getfields($id,$idx){
@@ -245,15 +244,16 @@ class LayerController extends Controller {
 			if ($type == 'image') {
 				$value['sourceURL'] = $url;
 				$value['linkURL'] = $link;
-			}else {
-              	$value['fields'] = $fields;
+			}else{
+				$comma_separated = implode(",", $fields);
+				$comma_separated = explode(",", $comma_separated);
+				$value['fields_'] = $fields;
+              	$value['fields'] = $comma_separated;
 			}
 			
 
 			$array['value'] = $value;
 			array_push($array2,$array);
-			
-		
 		return json_encode($array2);
 	}
 
@@ -308,8 +308,6 @@ class LayerController extends Controller {
 			//return $msg." ".$idx." ".$desc;
 			return redirect('layer');
 	    }
-		
-		
 	}
 
 
@@ -477,9 +475,6 @@ class LayerController extends Controller {
 			return $array2;
 		}
 	}
-
-
-
 	
 
 	public function GetDftrLevel($lvl='') {
