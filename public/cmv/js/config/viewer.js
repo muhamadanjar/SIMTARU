@@ -281,7 +281,7 @@ define([
                 title: 'Cari',
                 open: false,
                 position: 0,
-                options: 'config/find'
+                options: find
             },
             draw: {
                 include: false,

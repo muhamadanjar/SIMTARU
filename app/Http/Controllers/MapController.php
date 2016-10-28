@@ -229,20 +229,20 @@ class MapController extends Controller {
 	public function LayerUser(){
 		$user = \Auth::user();
 		$guest = \Auth::guest();
-		$currentroleuser = ($user ? $user->roles:'');
+		$currentroleuser = (\Auth::check()) ? $user->roles[0]->id : 0;
+		
 		$userid = ($user ? $user->id : 0);
+		
 			$layers = Layer::join('role_layer',function($join) {
 	      		$join->on('Layers.id_layer', '=', 'role_layer.layer_id');
 	    	})->where('na','=','N')
-	    	->where('role_layer.role_id','=',$userid)
+	    	->where('role_layer.role_id','=',$currentroleuser)
 	    	->with('roles')->orderBy('orderlayer','DESC');
 		
 		$sql = $layers->toSql();
 		$run_layers = $layers->get();
 		
 		$array = array(); $operationallayer = array();
-		
-		
 			foreach ($run_layers as $klyr => $layer) {
 				$optionfeature['id'] = $layer->layer;
 				$optionfeature['opacity'] = $layer->option_opacity;

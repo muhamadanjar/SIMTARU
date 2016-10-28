@@ -62,9 +62,22 @@
             var bm = {!! $bm !!};
             var idn = {!! $idn !!};
             var editorstatus = {!! $editor !!};
-
+            var statuswasdal;
+            var find;
+            @if(Auth::check()) 
+                @if(Auth::user()->hasRole('wasdal'))  
+                    statuswasdal = 1;
+                @else
+                    statuswasdal = 0;
+                @endif
+            @endif
             //console.log(op);
-           
+            
+            if(statuswasdal == 1){
+                find ='config/find_wasdal';
+            }else{
+                find ='config/find';
+            }
              
         </script>
         <script type="text/javascript">
