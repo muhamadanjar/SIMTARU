@@ -69,7 +69,6 @@ class LayerController extends Controller {
 		    throw $e;
 		}
 		
-
 		//$request->file('image')->move($destinationPath, $fileName);
 
 		return Redirect::to('layer')->with('message',\AHelper::format_message('Data Berhasil diubah','success'));
@@ -174,8 +173,6 @@ class LayerController extends Controller {
 		
 		 return json_encode($field);
 	}
-
-
 	public function getfieldInfos(){
 		$visible = \Input::get('visible');
 		$nf = \Input::get('nf');
@@ -206,7 +203,6 @@ class LayerController extends Controller {
 
 		return json_encode($array2);
 	}
-
 	public function getDesc(){
 		$visible = \Input::get('visible');
 		$nf = \Input::get('nf');
@@ -309,8 +305,6 @@ class LayerController extends Controller {
 			return redirect('layer');
 	    }
 	}
-
-
 	public function ajaxmedia(Request $request) {
 		if(Request::ajax()) {
             $data = Input::all();
@@ -319,8 +313,6 @@ class LayerController extends Controller {
 		}
 		
 	}
-
-	
 
 	public function edit(EditLayerRequest $request) {
 		$na = ($request->na ? $request->na:'Y');
@@ -457,7 +449,6 @@ class LayerController extends Controller {
 	     return $decimal;
 	}
 
-
 	public function getlevel($layerid=''){
 		$levelform = \Input::get('level');
 		$array = array();
@@ -476,7 +467,6 @@ class LayerController extends Controller {
 		}
 	}
 	
-
 	public function GetDftrLevel($lvl='') {
 	
 	  	$level = Role::orderBy('id','asc')->get();
